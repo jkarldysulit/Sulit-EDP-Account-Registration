@@ -55,7 +55,6 @@
             txtStudentNo.Name = "txtStudentNo";
             txtStudentNo.Size = new Size(150, 23);
             txtStudentNo.TabIndex = 1;
-            txtStudentNo.KeyPress += txtStudentNo_KeyPress;
             // 
             // lblProgram
             // 
@@ -152,7 +151,6 @@
             txtAge.Name = "txtAge";
             txtAge.Size = new Size(80, 23);
             txtAge.TabIndex = 11;
-            txtAge.KeyPress += txtAge_KeyPress;
             // 
             // lblContactCap
             // 
@@ -172,7 +170,6 @@
             txtContactNo.Name = "txtContactNo";
             txtContactNo.Size = new Size(150, 23);
             txtContactNo.TabIndex = 13;
-            txtContactNo.KeyPress += txtContactNo_KeyPress;
             // 
             // lblAddressCap
             // 
