@@ -64,9 +64,9 @@
             lblStudentNo.ForeColor = Color.FromArgb(30, 30, 30);
             lblStudentNo.Location = new Point(140, 20);
             lblStudentNo.Name = "lblStudentNo";
-            lblStudentNo.Size = new Size(40, 15);
+            lblStudentNo.Size = new Size(43, 15);
             lblStudentNo.TabIndex = 1;
-            lblStudentNo.Text = "label1";
+            lblStudentNo.Text = "............";
             // 
             // lblProgramCap
             // 
@@ -85,9 +85,9 @@
             lblProgram.ForeColor = Color.FromArgb(30, 30, 30);
             lblProgram.Location = new Point(140, 50);
             lblProgram.Name = "lblProgram";
-            lblProgram.Size = new Size(40, 15);
+            lblProgram.Size = new Size(43, 15);
             lblProgram.TabIndex = 3;
-            lblProgram.Text = "label1";
+            lblProgram.Text = "............";
             // 
             // lblLastNameCap
             // 
@@ -106,9 +106,9 @@
             lblLastName.ForeColor = Color.FromArgb(30, 30, 30);
             lblLastName.Location = new Point(140, 80);
             lblLastName.Name = "lblLastName";
-            lblLastName.Size = new Size(40, 15);
+            lblLastName.Size = new Size(43, 15);
             lblLastName.TabIndex = 5;
-            lblLastName.Text = "label1";
+            lblLastName.Text = "............";
             // 
             // lblFirstNameCap
             // 
@@ -127,9 +127,9 @@
             lblFirstName.ForeColor = Color.FromArgb(30, 30, 30);
             lblFirstName.Location = new Point(140, 110);
             lblFirstName.Name = "lblFirstName";
-            lblFirstName.Size = new Size(40, 15);
+            lblFirstName.Size = new Size(43, 15);
             lblFirstName.TabIndex = 7;
-            lblFirstName.Text = "label1";
+            lblFirstName.Text = "............";
             // 
             // lblMiddleNameCap
             // 
@@ -148,9 +148,9 @@
             lblMiddleName.ForeColor = Color.FromArgb(30, 30, 30);
             lblMiddleName.Location = new Point(140, 140);
             lblMiddleName.Name = "lblMiddleName";
-            lblMiddleName.Size = new Size(40, 15);
+            lblMiddleName.Size = new Size(43, 15);
             lblMiddleName.TabIndex = 9;
-            lblMiddleName.Text = "label1";
+            lblMiddleName.Text = "............";
             // 
             // lblAgeCap
             // 
@@ -169,9 +169,9 @@
             lblAge.ForeColor = Color.FromArgb(30, 30, 30);
             lblAge.Location = new Point(140, 170);
             lblAge.Name = "lblAge";
-            lblAge.Size = new Size(40, 15);
+            lblAge.Size = new Size(43, 15);
             lblAge.TabIndex = 11;
-            lblAge.Text = "label1";
+            lblAge.Text = "............";
             // 
             // lblContactCap
             // 
@@ -190,9 +190,9 @@
             lblContactNo.ForeColor = Color.FromArgb(30, 30, 30);
             lblContactNo.Location = new Point(140, 200);
             lblContactNo.Name = "lblContactNo";
-            lblContactNo.Size = new Size(40, 15);
+            lblContactNo.Size = new Size(43, 15);
             lblContactNo.TabIndex = 13;
-            lblContactNo.Text = "label1";
+            lblContactNo.Text = "............";
             // 
             // lblAddressCap
             // 
@@ -211,9 +211,9 @@
             lblAddress.ForeColor = Color.FromArgb(30, 30, 30);
             lblAddress.Location = new Point(140, 230);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(40, 15);
+            lblAddress.Size = new Size(43, 15);
             lblAddress.TabIndex = 15;
-            lblAddress.Text = "label1";
+            lblAddress.Text = "............";
             // 
             // btnSubmit
             // 
