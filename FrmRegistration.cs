@@ -65,7 +65,7 @@ namespace Account_Registration
             StudentInfoClass.ContactNo = long.Parse(txtContactNo.Text);
             StudentInfoClass.Address = txtAddress.Text;
 
-            FrmConfirm frmConfirm = new FrmConfirm(); // call the formConfirm
+            FrmConfirm frmConfirm = new FrmConfirm(); // call the frmConfirm
 
 
             if (frmConfirm.ShowDialog() == DialogResult.OK) //if na close yung frmConfirm via submit or clicking ok button sa messageBox,
