@@ -27,26 +27,35 @@ namespace Account_Registration
             cbProgram.Items.AddRange(programList.ToArray());
         }
 
-        private void txtStudentNo_KeyPress(object sender, KeyPressEventArgs error)
+        private void txtStudentNo_KeyPress(object sender, KeyPressEventArgs error)//txtStudentNo will accepts numbers only
         {
             if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
                 error.Handled = true;
         }
 
-        private void txtAge_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtAge_KeyPress(object sender, KeyPressEventArgs error)//txtAge will accepts numbers only
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                e.Handled = true;
+            if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
+                error.Handled = true;
         }
 
-        private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtContactNo_KeyPress(object sender, KeyPressEventArgs error)//txtContactNo will accepts numbers only
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                e.Handled = true;
+            if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
+                error.Handled = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtStudentNo.Text) ||string.IsNullOrEmpty(cbProgram.Text) ||
+        string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtFirstName.Text) ||
+        string.IsNullOrEmpty(txtMiddleName.Text) ||string.IsNullOrEmpty(txtAge.Text) ||
+        string.IsNullOrEmpty(txtContactNo.Text) ||string.IsNullOrEmpty(txtAddress.Text)) //input validations if may blank na field
+            {
+                MessageBox.Show("Please fill up all fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
             StudentInfoClass.Program = cbProgram.Text;
             StudentInfoClass.LastName = txtLastName.Text;
@@ -56,9 +65,11 @@ namespace Account_Registration
             StudentInfoClass.ContactNo = long.Parse(txtContactNo.Text);
             StudentInfoClass.Address = txtAddress.Text;
 
-            FrmConfirm frmConfirm = new FrmConfirm();
-            if (frmConfirm.ShowDialog() == DialogResult.OK)
-            {
+            FrmConfirm frmConfirm = new FrmConfirm(); // call the formConfirm
+
+
+            if (frmConfirm.ShowDialog() == DialogResult.OK) //if na close yung frmConfirm via submit or clicking ok button sa messageBox,
+            {                                               //then mag re-reset lahat ng fields
                 txtStudentNo.Clear();
                 cbProgram.SelectedIndex = -1;
                 txtLastName.Clear();

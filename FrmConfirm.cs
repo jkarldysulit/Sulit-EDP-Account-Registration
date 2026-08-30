@@ -38,19 +38,21 @@ namespace Account_Registration
             lblStudentNo.Text = DelStudNo().ToString();
         }
 
+        private bool isSubmitted = false;
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Registration completed.", "Success",
         MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.DialogResult = DialogResult.OK;
+            isSubmitted = true;
             this.Close();
+
 
         }
 
         private void FrmConfirm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = isSubmitted ? DialogResult.OK : DialogResult.Cancel; // macle-clear lang yung fields if user submit it properly not closed by X without clicking submit.
         }
     }
 }
