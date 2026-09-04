@@ -52,7 +52,7 @@ namespace Account_Registration
 
         private void FrmConfirm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.DialogResult = isSubmitted ? DialogResult.OK : DialogResult.Cancel; // macle-clear lang yung fields if user submit it properly not closed by X without clicking submit.
+            this.DialogResult = isSubmitted ? DialogResult.OK : DialogResult.Cancel; // clear all fields if user submit it properly not closed by X without clicking submit.
         }
     }
 }

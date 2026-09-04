@@ -1,12 +1,10 @@
 ﻿using System;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using System.Windows.Forms;
 
 namespace Account_Registration
@@ -27,35 +25,24 @@ namespace Account_Registration
             cbProgram.Items.AddRange(programList.ToArray());
         }
 
-        private void txtStudentNo_KeyPress(object sender, KeyPressEventArgs error)//txtStudentNo will accepts numbers only
-        {
-            if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
-                error.Handled = true;
-        }
-
-        private void txtAge_KeyPress(object sender, KeyPressEventArgs error)//txtAge will accepts numbers only
-        {
-            if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
-                error.Handled = true;
-        }
-
-        private void txtContactNo_KeyPress(object sender, KeyPressEventArgs error)//txtContactNo will accepts numbers only
-        {
-            if (!char.IsDigit(error.KeyChar) && !char.IsControl(error.KeyChar))
-                error.Handled = true;
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
-        {
+        {//input validations
             if (string.IsNullOrEmpty(txtStudentNo.Text) ||string.IsNullOrEmpty(cbProgram.Text) ||
         string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtFirstName.Text) ||
         string.IsNullOrEmpty(txtMiddleName.Text) ||string.IsNullOrEmpty(txtAge.Text) ||
-        string.IsNullOrEmpty(txtContactNo.Text) ||string.IsNullOrEmpty(txtAddress.Text)) //input validations if may blank na field
+        string.IsNullOrEmpty(txtContactNo.Text) ||string.IsNullOrEmpty(txtAddress.Text)) 
             {
                 MessageBox.Show("Please fill up all fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (!long.TryParse(txtStudentNo.Text, out long studentNo) || 
+             !long.TryParse(txtAge.Text, out long age) || !long.TryParse(txtContactNo.Text, out long contactNo))
+            {
+                MessageBox.Show("Student No., Age, and Contact No. must be numbers only.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            //assign values to the StudentInfoClass
             StudentInfoClass.StudentNo = long.Parse(txtStudentNo.Text);
             StudentInfoClass.Program = cbProgram.Text;
             StudentInfoClass.LastName = txtLastName.Text;
@@ -65,7 +52,7 @@ namespace Account_Registration
             StudentInfoClass.ContactNo = long.Parse(txtContactNo.Text);
             StudentInfoClass.Address = txtAddress.Text;
 
-            FrmConfirm frmConfirm = new FrmConfirm(); // call the frmConfirm
+            FrmConfirm frmConfirm = new FrmConfirm();
 
 
             if (frmConfirm.ShowDialog() == DialogResult.OK) //if na close yung frmConfirm via submit or clicking ok button sa messageBox,
